@@ -1,14 +1,11 @@
-const app = require('express')();
-const PORT = 3000;
+require('dotenv').config();
+const http = require('http');
+const app = require('./app');
 
-app.listen(
-    PORT,
-    () => console.log(`API started on port http://localhost:${PORT}/`)
-);
+const port = process.env.PORT || 3000;
+const address = process.env.ADDRESS || 'localhost';
+const server = http.createServer(app);
 
-app.get('/', (req, res) => {
-    res.status(200).send({
-        message: "success",
-        status: "200"
-    });
+server.listen(port, () => {
+    console.log(`server started on http://${address}:${port}`);
 });
