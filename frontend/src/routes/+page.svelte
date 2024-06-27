@@ -10,7 +10,7 @@
         {
             title: "Portfolio",
             role: "Fullstack developer",
-            lang: "Ruby on Rails, Svelte",
+            lang: "Express.js, Svelte",
             year: "2024",
             link: "https://aegislash525.org/"
         },
@@ -34,13 +34,6 @@
             lang: "Spring Boot, Bootstrap",
             year: "2023",
             link: "https://github.com/aegislash525/forum"
-        },
-        {
-            title: "Translit GUI",
-            role: "Software developer",
-            lang: "Java Swing",
-            year: "2023",
-            link: "https://github.com/aegislash525/ua-translit-java"
         },
         {
             title: "Translit GUI",
