@@ -1,12 +1,16 @@
-const user = require('../../database/models/user');
-
 exports.getAll = (req, res) => {
-    const usr = new user(req.params.userId, 'aegislash', [], [], [], 'toor');
     res.status(200).json({
         status: 200,
         message: "success",
         data: [
-            usr
+            {
+                id: req.params.userId,
+                username: "aegislash",
+                education: [],
+                skills: [],
+                projects: [],
+                password: "toor"
+            }
         ]
     });
 };
@@ -40,5 +44,3 @@ exports.create = (req, res) => {
         }
     });
 };
-
-// module.exports = index;
