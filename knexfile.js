@@ -1,7 +1,8 @@
 require('dotenv').config();
+
 const dev = './database/' + process.env.DEV_DB_NAME;
 const prod = './database/' + process.env.PROD_DB_NAME;
-console.log(`dev=${dev}\nprod=${prod}`);
+
 module.exports = {
     development: {
         client: 'sqlite3',

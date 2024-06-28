@@ -15,7 +15,16 @@ exports.getAll = async (req, res) => {
 exports.getById = async (req, res) => {
     const out = await service.getById(req.params.userId);
     if (out.status === 200) {
-        res.status(out.status).json(out);
+        res.status(out.status).json({
+            status: out.status,
+            message: out.message,
+            data: {
+                id: out.data.id,
+                username: out.data.username,
+                created_at: out.data.created_at,
+                updated_at: out.data.updated_at
+            }
+        });
     } else {
         res.status(out.status).json({
             status: out.status,
@@ -37,4 +46,12 @@ exports.create = async (req, res) => {
             message: out.message
         });
     }
+};
+
+exports.comparePassword = async (req, res) => {
+    const out = await service.checkPassword(
+        req.body.id, req.body.password
+    );
+    console.log(`OUT: ${out}`);
+    res.status(out.status).json(out);
 };
