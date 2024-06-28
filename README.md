@@ -38,7 +38,7 @@ You can preview the production build with `npm run preview`.
 
 ## ⚙️ Backend
 
-### Dependencies
+### Dependencies overview
 
 ```json
 "dependencies": {
@@ -55,13 +55,15 @@ You can preview the production build with `npm run preview`.
 ### Database
 
 Create sqlite3 database in `/database/` directory. Specify database name in
-`.env` file in variable `DB_NAME=""`. <br />
-Run `npm run migrate` to migrate tables. <br />
-To create migration file run `npx knex migrate:make table_name`
+`.env` file in variable `DEV_DB_NAME="dev.sqlite3"` and/or `PROD_DB_NAME="prod.sqlite3"`. <br />
+Run `npm run migrate:dev` or `npm run migrate:prod` to migrate tables. <br />
+To create migration file run `npx knex migrate:make table_name` in the root directory. <br />
+Database configuration file is `knexfile.js` in the root directory.
 
 ### Start express.js server 🔌
 
-Once you've installed all dependencies (`npm install`), you can run the server with following command.
+Once you've installed all dependencies (`npm install`), you can
+run the server with following command.
 
 ``` bash
 npm run dev
